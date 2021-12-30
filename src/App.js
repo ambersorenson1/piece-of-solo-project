@@ -18,6 +18,11 @@ const App = () => {
     dosage: "",
     timeOfMeds: "",
   });
+  const [saveFormData, setSaveFormData] = useState({
+    medicationName: "",
+    dosage: "",
+    timeOfMeds: "",
+  });
 
   const [editMedicationId, setEditMedicationId] = useState(null);
 
@@ -79,6 +84,7 @@ const App = () => {
     setEditMedicationId(null);
   };
 
+
   const handleEditClick = (event, medication) => {
     event.preventDefault();
     setEditMedicationId(medication.id);
@@ -90,6 +96,25 @@ const App = () => {
     };
 
     setEditFormData(formValues);
+  };
+  const handleSaveClick = (event) => {
+    event.preventDefault();
+
+    const savedMedication = {
+      id: editMedicationId,
+      medicationName: saveFormData.medicationName,
+      dosage: saveFormData.dosage,
+      timeOfMeds: saveFormData.timeOfMeds,
+    };
+
+    const newSavedMedications = [...medications];
+
+    const index = medications.findIndex((medication) => medication.id === editMedicationId);
+
+    newSavedMedications[index] = savedMedication;
+
+    setMedications(newSavedMedications);
+    setEditMedicationId(null);
   };
 
   const handleCancelClick = () => {
@@ -126,6 +151,7 @@ const App = () => {
                     editFormData={editFormData}
                     handleEditFormChange={handleEditFormChange}
                     handleCancelClick={handleCancelClick}
+                    handleSaveClick={handleSaveClick}
                   />
                 ) : (
                   <ReadOnlyRow
