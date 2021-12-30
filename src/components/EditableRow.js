@@ -29,7 +29,7 @@ const EditableRow = ({
       </td>
       <td>
         <input
-          type="text"
+          type="time"
           name="timeOfMeds"
           required="required"
           placeholder="Enter time of medication..."

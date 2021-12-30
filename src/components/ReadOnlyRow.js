@@ -5,7 +5,7 @@ const ReadOnlyRow = ({ medication, handleEditClick, handleDeleteClick }) => {
     <tr>
       <td>{medication.medicationName}</td>
       <td>{medication.dosage}</td>
-      <td>{medication.timeOfMed}</td>
+      <td>{medication.timeOfMeds}</td>
       <td>
         <button
           type="button"

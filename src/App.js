@@ -52,7 +52,7 @@ const App = () => {
       id: nanoid(),
       medicationName: addFormData.medicationName,
       dosage: addFormData.dosage,
-      timeOfMed: addFormData.timeOfMed,
+      timeOfMeds: addFormData.timeOfMeds,
     };
 
     const newMedications = [...medications, newMedication];
@@ -66,7 +66,7 @@ const App = () => {
       id: editMedicationId,
       medicationName: editFormData.medicationName,
       dosage: editFormData.dosage,
-      timeOfMed: editFormData.timeOfMed,
+      timeOfMeds: editFormData.timeOfMeds,
     };
 
     const newMedications = [...medications];
@@ -86,7 +86,7 @@ const App = () => {
     const formValues = {
       medicationName: medication.medicationName,
       dosage: medication.dosage,
-      timeOfMed: medication.timeOfMed,
+      timeOfMeds: medication.timeOfMeds,
     };
 
     setEditFormData(formValues);
